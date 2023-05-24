@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="464.0" layoutY="13.0" prefHeight="19.0" prefWidth="91.0" text="Connected as:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label fx:id="receiverLabel" alignment="CENTER" layoutX="286.0" layoutY="101.0" prefHeight="35.0" prefWidth="356.0" text="General">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ScrollPane fx:id="scrollPaneMain" fitToHeight="true" fitToWidth="true" layoutX="286.0" layoutY="137.0" prefHeight="324.0" prefWidth="356.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: grey; -fx-background-color: LIGHTBLUE;">
+         <content>
+            <VBox fx:id="vboxMessages" prefHeight="318.0" prefWidth="354.0" style="-fx-border-color: gray; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: #FFFEF2;" />
+         </content>
+      </ScrollPane>
+      <TextField fx:id="messageField" layoutX="290.0" layoutY="473.0" onKeyPressed="#sendMessage" prefHeight="26.0" prefWidth="356.0" promptText="Type your message here..." style="-fx-border-color: gray; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: #FFFEF2;" />
+      <Label alignment="CENTER" layoutX="28.0" layoutY="101.0" prefHeight="35.0" prefWidth="79.0" text="Rooms">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="roomNameField" layoutX="28.0" layoutY="397.0" prefHeight="26.0" prefWidth="174.0" promptText="New chat name" style="-fx-border-color: gray; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: #FFFEF2;" />
+      <Button layoutX="28.0" layoutY="435.0" mnemonicParsing="false" onAction="#createRoom" prefHeight="26.0" prefWidth="174.0" style="-fx-border-color: gray; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10;" text="Create room" />
+      <Button layoutX="28.0" layoutY="473.0" mnemonicParsing="false" onAction="#exit" prefHeight="26.0" prefWidth="53.0" style="-fx-border-color: gray; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10;" text="Exit" />
+      <Label alignment="CENTER" layoutX="28.0" layoutY="5.0" prefHeight="35.0" prefWidth="66.0" text="Users">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="nameLabel" layoutX="554.0" layoutY="13.0" prefHeight="18.0" prefWidth="91.0" text="???">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <ScrollPane fx:id="scrollPaneUsers" fitToHeight="true" fitToWidth="true" layoutX="28.0" layoutY="35.0" prefHeight="67.0" prefWidth="614.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: LIGHTBLUE; -fx-border-color: grey;" vbarPolicy="NEVER">
+         <content>
+            <HBox fx:id="hboxUsers" prefHeight="62.0" prefWidth="614.0" style="-fx-border-color: gray; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: #FFFEF2;" />
+         </content>
+      </ScrollPane>
+      <ScrollPane fx:id="scrollPaneGroups" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutX="28.0" layoutY="137.0" prefHeight="250.0" prefWidth="174.0" style="-fx-border-color: gray; -fx-border-width: 2; -fx-background-radius: 10; -fx-border-radius: 10;">
+         <content>
+            <VBox fx:id="vboxGroups" prefHeight="201.0" prefWidth="169.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: LIGHTBLUE; -fx-border-color: grey; -fx-background-color: #FFFEF2;" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
